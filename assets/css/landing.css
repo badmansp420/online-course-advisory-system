@@ -92,10 +92,6 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.dropdown:hover::before .dropdown-content {
-    content: "Let's ";
-}
-
 
 .active {
     background: #ddd5d5;
