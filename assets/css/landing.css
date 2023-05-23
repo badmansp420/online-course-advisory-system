@@ -5,8 +5,8 @@
 }
 
 body {
-    background: #f4ebeb;
-    font-family: sans-serif;
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .row .nav {
@@ -14,14 +14,41 @@ body {
     width: 100%;
     height: 6vh;
     box-shadow: 0px 5px 8px #8589886a;
+}
+
+.row .nav .nav-item {
+    margin-top: 5px;
+    margin-left: 94%;
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 6px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid silver;
+}
+
+.row .nav .nav-item i {
+    margin-left: 3px;
+    margin-right: 5px;
 
 }
 
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: .2s;
+    background: #cccccc;
+    border: 2 px solid silver;
+    box-shadow: 1px 1px 2px rgb(55, 50, 50);
+}
+
 .row .col-1 .sidebar {
-    background: #71b3cd;
-    box-shadow: 4px 0px 8px #388a836a;
+    background: #70798C;
+    box-shadow: 4px 0px 8px #70798C;
     height: 92vh;
     width: 25vh;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding-top: 50px;
 }
 
@@ -43,7 +70,6 @@ body {
     text-align: center;
     cursor: pointer;
     border-radius: 10px;
-
 }
 
 .side-bar .side-bar-item i {
@@ -60,6 +86,7 @@ body {
     transform: scale(1.1);
     transition: .2s;
     background: #ddd5d5;
+    box-shadow: 2px 2px 2px rgb(167, 167, 167);
 }
 
 .dropdown-content {
@@ -95,6 +122,7 @@ body {
 
 .active {
     background: #ddd5d5;
+    box-shadow: 2px 2px 2px rgb(167, 167, 167);
 }
 
 .row .col-2 .content {
@@ -106,12 +134,37 @@ body {
 }
 
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:900px) {
+    .row .nav .nav-item {
+        display: inline-flex;
+        margin-top: 7px;
+        margin-left: 80%;
+        margin-bottom: 5px;
+        padding: 1px;
+        border-radius: 6px;
+        color: #000000;
+        text-decoration: none;
+        font-weight: 300;
+        border: 2px solid silver;
+    }
+
+    .row .nav .nav-item i {
+        margin-left: 3px;
+        margin-right: 5px;
+    }
+
+    .nav-item:hover {
+        transition: .3s;
+        background: #cccccc;
+        border: 2 px solid silver;
+        box-shadow: 1px 1px 2px rgb(55, 50, 50);
+    }
+
     .row .col-1 .sidebar {
-        background: #71b3cd;
-        box-shadow: 5px 0px 8px #388a836a;
+        background: #70798C;
+        box-shadow: 5px 0px 8px #70798C;
         height: 100vh;
-        width: 15vh;
+        width: 18vh;
         padding-top: 20px;
     }
 
@@ -154,6 +207,6 @@ body {
         display: flex;
         margin-right: 10px;
         margin-top: 25px;
-        margin-left: 9rem;
+        margin-left: 7rem;
     }
 }
