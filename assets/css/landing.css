@@ -106,7 +106,7 @@ body {
 }
 
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:800px) {
     .row .col-1 .sidebar {
         background: #71b3cd;
         box-shadow: 15px 0px 8px #388a836a;
