@@ -126,7 +126,7 @@ body {
 }
 
 .row .col-2 .content {
-    position: absolute;
+    position: relative;
     display: flex;
     margin-right: 10px;
     margin-top: 25px;
