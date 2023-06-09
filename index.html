@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card" style="width: 60%; margin-top:20px; margin-left:15%;">
+                <div class="card" style="width: 60%; margin-top:20px; margin-left:15%; box-shadow: 5px 5px 10px gray;">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">Login Here</h5>
                         <hr>
@@ -53,18 +53,24 @@
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1">
                             </div>
-
+                            <div class="mb-3 form-check-reverse">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Show Password
+                                </label>
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label">Login Type</label>
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Faculty</option>
-                                    <option value="3">Student</option>
+                                    <option value="0">Admin</option>
+                                    <option value="1">Faculty</option>
+                                    <option value="2">Student</option>
                                 </select>
                             </div>
                             <div class="d-md-flex justify-content-md-center">
-                                <button type="button" id="login" onclick="window.location.href='admin/'" class="btn btn-primary">Login</button>
+                                <button type="button" id="login" onclick="window.location.href='admin/'"
+                                    class="btn btn-primary">Login</button>
                             </div>
                         </form>
                     </div>
@@ -74,7 +80,7 @@
         <hr>
         <div class="row justify-content-center" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="col-sm-6">
-                <div class="card" style="width: 60%; margin-top:20px; margin-left:15%;">
+                <div class="card" style="width: 60%; margin-top:20px; margin-left:15%; box-shadow: 5px 5px 10px gray;">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">Register Here (Student)</h5>
                         <hr>
@@ -99,7 +105,8 @@
                             </div>
 
                             <div class="d-md-flex justify-content-md-center">
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                <a href="config/connection.php"><button type="submit"
+                                        class="btn btn-primary">Register</button></a>
                             </div>
                         </form>
                     </div>
@@ -120,10 +127,13 @@
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
             <br>
             <a href="http://"><i class="bi bi-instagram" target="_blank" rel="noopener noreferrer"></i></a>&nbsp;&nbsp;
-            <a href="https://github.com/badmansp420" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/protik-sarkar-355b991a3/" target="_blank" rel="noopener noreferrer"><i class="fbi bi-linkedin"></i></a>&nbsp;&nbsp;
+            <a href="https://github.com/badmansp420" target="_blank" rel="noopener noreferrer"><i
+                    class="bi bi-github"></i></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/protik-sarkar-355b991a3/" target="_blank" rel="noopener noreferrer"><i
+                    class="fbi bi-linkedin"></i></a>&nbsp;&nbsp;
             <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fbi bi-facebook"></i></a>&nbsp;&nbsp;
-            <a href="https://twitter.com/ProtikS61977565" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>&nbsp;&nbsp;
+            <a href="https://twitter.com/ProtikS61977565" target="_blank" rel="noopener noreferrer"><i
+                    class="bi bi-twitter"></i></a>&nbsp;&nbsp;
 
             <br>
         </div>
