@@ -19,6 +19,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- Ajax Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- For Sweet Alert CSS File -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
 
 <body>
@@ -42,7 +50,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">Login Here</h5>
                         <hr>
-                        <form>
+                        <form id="loginForm" action="config/login.php" method="post">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
@@ -68,11 +76,47 @@
                                     <option value="2">Student</option>
                                 </select>
                             </div>
-                            <div class="d-md-flex justify-content-md-center">
-                                <button type="button" id="login" onclick="window.location.href='admin/'"
-                                    class="btn btn-primary">Login</button>
+                            <div class="d-grid gap-2 col-sm-6 mx-auto my-2">
+                                <button type="submit" id="login" name="login"
+                                    class="btn btn-outline-primary" onclick="loding()">Login</button>
                             </div>
+
                         </form>
+                        <!-- <script>
+                            // For Login Form AJAX
+                            jQuery('#loginForm').on('submit', function (e) {
+                                login.innerText = "Please Wait...";
+                                login.disabled = true;
+                                jQuery.ajax({
+                                    url: 'config/login.php',
+                                    type: 'post',
+                                    data: jQuery('#loginForm').serialize(),
+                                    success: function (e) {
+                                        // Sweet Alert 
+
+                                        // const Toast = Swal.mixin({
+                                        //     toast: true,
+                                        //     position: 'top-end',
+                                        //     showConfirmButton: false,
+                                        //     timer: 3000,
+                                        //     timerProgressBar: true,
+                                        //     didOpen: (toast) => {
+                                        //         toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        //         toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                        //     }
+                                        // })
+
+                                        // Toast.fire({
+                                        //     icon: 'success',
+                                        //     title: 'Registration is successfully'
+                                        // })
+                                        login.innerText = "Login";
+                                        login.disabled = false;
+                                    }
+                                })
+                                e.preventDefault();
+                            });
+                        </script> -->
                     </div>
                 </div>
             </div>
@@ -84,24 +128,23 @@
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center;">Register Here (Student)</h5>
                         <hr>
-                        <form>
+                        <form id="registerForm" name="registerForm" method="post">
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="st_name" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Father Name</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1">
+                                <input type="text" name="fa_name" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="email" name="email" class="form-control" required>
                                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password1">
+                                <input type="password" name="password" class="form-control" id="password1" required>
                             </div>
                             <div class="mb-3 form-check-reverse">
                                 <input class="form-check-input" type="checkbox" value="" id="showpassword1">
@@ -109,14 +152,63 @@
                                     Show Password
                                 </label>
                             </div>
-                            <div class="d-md-flex justify-content-md-center">
-                                <a href="config/connection.php"><button type="submit"
-                                        class="btn btn-primary">Register</button></a>
+                            <div class="d-grid gap-2 col-sm-6 mx-auto my-2">
+                                <button id="register" class="btn btn-success">Register Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
+            <script>
+                // For Registration Form AJAX 
+                jQuery('#registerForm').on('submit', function (e) {
+                    register.innerText = 'Please wait...';
+                    // jQuery('#register').attr('disabled', true);
+                    register.disabled = true;
+                    jQuery.ajax({
+                        url: 'config/component.php',
+                        type: 'post',
+                        data: jQuery('#registerForm').serialize(),
+                        success: function (result) {
+                            // jQuery('#thank_you_msg').html('Thank you');
+                            // jQuery('#registerForm')['0'].reset();
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Registration Is Successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+
+                            // Sweet Alert 
+                            // const Toast = Swal.mixin({
+                            //     toast: true,
+                            //     position: 'top-end',
+                            //     showConfirmButton: false,
+                            //     timer: 3000,
+                            //     timerProgressBar: true,
+                            //     didOpen: (toast) => {
+                            //         toast.addEventListener('mouseenter', Swal.stopTimer)
+                            //         toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            //     }
+                            // })
+
+                            // Toast.fire({
+                            //     icon: 'success',
+                            //     title: 'Registration is successfully'
+                            // })
+
+
+                            register.innerText = 'Register Now';
+                            jQuery('#register').attr('disabled', false);
+                        }
+                    });
+                    e.preventDefault();
+                });
+            </script>
+
             <div class="col">
                 <div class="card" style="width: 100%; border: none; margin-left:15%; margin-top:10px;">
                     <img src="assets/images/book.png" width="60%" height="60%">
@@ -161,6 +253,12 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="assets/js/component.js"></script>
+    <!-- For Sweet Alert Js Files -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
 </body>
 
 </html>
