@@ -41,21 +41,13 @@
     </script>
 </head>
 
-<body onload="windowLoad()">
-    <div class="loader" id="loader">
-
-        <img src="assets/images/loading.gif" alt="loading"
-            style="display: block; margin-left: auto; margin-right: auto; margin-top: 15%; height: 8vw;">
-        <!-- <label for="loading" style="text-align: center;">Loading...</label> -->
-    </div>
-
-
+<body>
     <div id="main" style="display: none;">
         <!-- As a heading -->
         <nav class="navbar" style="background-color: #cae9ff; position: sticky;">
             <div class="container-fluid">
-                <img src="assets/images/studying.png" height="50px" width="50px">
-                <span class="navbar-brand mb-0 h1">Course-Advisory-System</span>
+                <!-- <img src="assets/images/studying.png" height="50px">
+                <span class="navbar-brand mb-0 h1">Course-Advisory-System</span> -->
             </div>
         </nav>
         <div class="container">
@@ -69,75 +61,7 @@
                     <div class="card"
                         style="width: 60%; margin-top:20px; margin-left:15%; box-shadow: 5px 5px 10px gray;">
                         <div class="card-body">
-                            <h5 class="card-title" style="text-align: center;">Login Here</h5>
-                            <hr>
-                            <form id="loginForm" action="config/login.php" method="post">
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password">
-                                </div>
-                                <div class="mb-3 form-check-reverse">
-                                    <input class="form-check-input" type="checkbox" value="" id="showpassword">
-                                    <label class="form-check-label" for="showpassword">
-                                        Show Password
-                                    </label>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Login Type</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Open this select menu</option>
-                                        <option value="0">Admin</option>
-                                        <option value="1">Faculty</option>
-                                        <option value="2">Student</option>
-                                    </select>
-                                </div>
-                                <div class="d-grid gap-2 col-sm-6 mx-auto my-2">
-                                    <button type="submit" id="login" name="login" class="btn btn-outline-primary"
-                                        onclick="loding()">Login</button>
-                                </div>
-
-                            </form>
-                            <!-- <script>
-                            // For Login Form AJAX
-                            jQuery('#loginForm').on('submit', function (e) {
-                                login.innerText = "Please Wait...";
-                                login.disabled = true;
-                                jQuery.ajax({
-                                    url: 'config/login.php',
-                                    type: 'post',
-                                    data: jQuery('#loginForm').serialize(),
-                                    success: function (e) {
-                                        // Sweet Alert 
-
-                                        // const Toast = Swal.mixin({
-                                        //     toast: true,
-                                        //     position: 'top-end',
-                                        //     showConfirmButton: false,
-                                        //     timer: 3000,
-                                        //     timerProgressBar: true,
-                                        //     didOpen: (toast) => {
-                                        //         toast.addEventListener('mouseenter', Swal.stopTimer)
-                                        //         toast.addEventListener('mouseleave', Swal.resumeTimer)
-                                        //     }
-                                        // })
-
-                                        // Toast.fire({
-                                        //     icon: 'success',
-                                        //     title: 'Registration is successfully'
-                                        // })
-                                        login.innerText = "Login";
-                                        login.disabled = false;
-                                    }
-                                })
-                                e.preventDefault();
-                            });
-                        </script> -->
+                            ...
                         </div>
                     </div>
                 </div>
@@ -240,7 +164,7 @@
         </div>
     </div>
 
-    <footer class="card-footer" id="footer" style="display: none; position:relative;">
+    <footer id="footer" style="display: none;">
         <div class="card" style="background-color: #C6CCD2;">
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">Online Course Advisoy System</h5>
